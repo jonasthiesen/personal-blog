@@ -11,3 +11,7 @@ before_script:
 cache:
   directories:
     - vendor
+
+branches:
+  only:
+  - master
