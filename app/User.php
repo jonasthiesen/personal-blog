@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The posts that a user has written
+     * The posts that a user has written.
      *
      * @return Post
      */
