@@ -2,13 +2,11 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\Post;
 use App\Tag;
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class PostTest extends TestCase
 {
@@ -26,7 +24,6 @@ class PostTest extends TestCase
         $this->assertEquals($title, $post->title);
     }
 
-    
     /**
      * @test
      */
@@ -59,7 +56,7 @@ class PostTest extends TestCase
         $user = factory(User::class)->create();
 
         $post = factory(Post::class)->create(['user_id' => $user->id]);
-        
+
         $this->assertEquals($user->id, $post->author->id);
     }
 
