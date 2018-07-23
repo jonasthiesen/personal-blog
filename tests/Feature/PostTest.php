@@ -2,10 +2,9 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Post;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class PostTest extends TestCase
 {
@@ -19,7 +18,7 @@ class PostTest extends TestCase
         $posts = factory(Post::class, 5)->create();
 
         $page = $this->get('posts');
-        
+
         foreach ($posts as $post) {
             $page->assertSee($post->title);
         }
